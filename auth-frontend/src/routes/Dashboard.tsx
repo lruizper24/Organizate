@@ -70,14 +70,19 @@ export default function Dashboard() {
     <PortalLayout>
       <div className="dashboard">
         <h1> Tablero de {auth.getUser()?.name ?? ""}</h1>
+        <div className="input-container">
         <form onSubmit={handleSubmit}>
           <input
-            type="text"
-            placeholder="Agregar nueva tarea..."
+              type="text"
+              className="input-field"
+            placeholder="Escribe aquí tu nueva tarea!"
             value={value}
             onChange={(e) => setValue(e.target.value)}
-          />
-        </form>
+            />
+            <label htmlFor="input-field" className="input-label"> Escribiendo...</label>
+            <span className="input-highlight"></span>
+          </form>
+        </div>
         {todos.map((post: Todo) => (
           <div key={post.id}>
             <h3>{post.title}</h3>

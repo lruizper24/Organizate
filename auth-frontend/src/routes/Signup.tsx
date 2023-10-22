@@ -47,31 +47,34 @@ export default function Signup() {
   return (
     <DefaultLayout>
       <form onSubmit={handleSubmit} className="form">
-        <h1>Registrarme</h1>
+        <h1 className="heading">Registrarme</h1>
         {!!errorResponse && <div className="errorMessage">{errorResponse}</div>}
-        <label>Nombre</label>
         <input
           type="text"
+          placeholder="Nombre"
+          className="input"
           name="name"
           onChange={(e) => setName(e.target.value)}
           value={name}
         />
-        <label>Nobre de usuario </label>
         <input
           type="text"
+          placeholder="Usuario"
+          className="input"
           name="username"
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
-        <label>Contraseña</label>
         <input
           type="password"
+          placeholder="Contraseña"
+          className="input"
           name="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
 
-        <button>Crear una cuenta</button>
+        <button className="btn"> Crear Cuenta </button>
       </form>
     </DefaultLayout>
   );

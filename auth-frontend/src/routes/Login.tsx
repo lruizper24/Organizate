@@ -52,24 +52,26 @@ export default function Login() {
   return (
     <DefaultLayout>
       <form onSubmit={handleSubmit} className="form">
-        <h1>Iniciar Sesión</h1>
+        <h1 className="heading">Iniciar Sesión</h1>
         {!!errorResponse && <div className="errorMessage">{errorResponse}</div>}
-        <label> Nombre de usuario </label>
         <input
           name="username"
+          placeholder="Usuario"
+          className="input"
           type="text"
           onChange={handleChange}
           value={username}
         />
-        <label>Contraseña</label>
         <input
           type="password"
+          placeholder="Contraseña"
+          className="input"
           name="password"
           onChange={handleChange}
           value={password}
         />
 
-        <button> Ingresar </button>
+        <button className="btn"> Ingresar </button>
       </form>
     </DefaultLayout>
   );

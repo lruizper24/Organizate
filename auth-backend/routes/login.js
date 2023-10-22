@@ -37,14 +37,14 @@ router.post("/", async function (req, res, next) {
 
         return res.status(401).json(
           jsonResponse(401, {
-            error: "username and/or password incorrect",
+            error: "Usuario o contraseña incorrectos",
           })
         );
       }
     } else {
       return res.status(401).json(
         jsonResponse(401, {
-          error: "username does not exist",
+          error: "El usuario no existe",
         })
       );
     }
